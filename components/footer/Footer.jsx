@@ -4,12 +4,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='padding-x flex gap-8'>
-        <div className='flex flex-col w-[40%]'>
+    <footer className='padding-x flex flex-col xl:flex-row gap-8'>
+        <div className='flex flex-col xl:w-[40%]'>
             <div className='mb-8'>
                 <Image src='/pizza-piece.png' alt='logo' className='-rotate-[35deg]' width={40} height={40} />
             </div>
-            <div className="flex space-x-8">
+            <div className="flex flex-col xl:flex-row gap-8">
                 <div className='bg-white rounded-xl flex items-center space-x-3 p-3 leading-3'>
                     <div>
                         <Image src='/apple.png' alt='logo' width={40} height={40} />
@@ -30,7 +30,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className='flex gap-12 justify-between w-[60%]'>
+        <div className='flex flex-wrap gap-12 justify-between xl:w-[60%]'>
             {
                 footerLinks.map((footerCategory) => (
                     <div key={footerCategory.title} className='mb-8 text-white'>

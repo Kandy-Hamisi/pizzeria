@@ -2,14 +2,14 @@ import React from 'react'
 
 const Newsletter = () => {
   return (
-    <section className='padding-x flex items-center'>
+    <section className='padding-x flex flex-col xl:flex-row items-center'>
         <div className='w-full'>
-            <h1 className='font-palanquin text-4xl font-bold mb-8'>Subscribe To Our Newsletter</h1>
-            <p className='font-montserrat text-slate-gray max-w-[45rem] leading-[40px]'>Give us your email and we will give you amazing offers and meals at the beginning and end of every week. Quid Pro Quo</p>
+            <h1 className='font-palanquin text-2xl xl:text-4xl font-bold mb-4 xl:mb-8'>Subscribe To Our Newsletter</h1>
+            <p className='font-montserrat text-slate-gray max-w-[45rem] leading-[20px] xl:leading-[40px] mb-4'>Give us your email and we will give you amazing offers and meals at the beginning and end of every week. Quid Pro Quo</p>
         </div>
 
         <div className='flex justify-end w-full'>
-            <div className='w-[70%] relative bg-pale-blue py-4 px-6 rounded-full flex items-center justify-between'>
+            <div className='xl:w-[70%] relative bg-pale-blue py-4 px-6 rounded-full flex items-center justify-between'>
                 <input
                     type="text"
                     placeholder='Enter your email'

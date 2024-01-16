@@ -167,6 +167,11 @@ ul {
   top: 95% !important;
 }
 
+@media screen and (max-width: 768px) {
+  .swiper-button-prev {
+    left: 40% !important;
+  }
+}
 .swiper-button-next {
   background-image: url("/right-arrow.png");
   left: 55% !important;
