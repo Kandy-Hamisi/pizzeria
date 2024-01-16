@@ -1,6 +1,6 @@
-import { Navbar } from '@/components'
+import { Footer, Navbar } from '@/components'
 // import './globals.css'
-import { Hero, Dishes, HowToOrder, Feedback } from '@/sections'
+import { Hero, Dishes, HowToOrder, Feedback, Newsletter } from '@/sections'
 
 
 export default function Home() {
@@ -21,6 +21,14 @@ export default function Home() {
 
       <section className='padding'>
         <Feedback />
+      </section>
+
+      <section className='padding bg-pink-100'>
+        <Newsletter />
+      </section>
+
+      <section className='padding bg-black text-white-400'>
+        <Footer />
       </section>
     </>
   )

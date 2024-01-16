@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-import { dishes } from '@/constants';
+import { dishes, testimonials } from '@/constants';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, Autoplay, A11y } from 'swiper/modules';
@@ -25,11 +25,10 @@ const Slider = () => {
    
 
   return (
-    <div className=''>
+    <div className='mt-[4rem]'>
         <Swiper
         modules={[Pagination, Scrollbar, Navigation, A11y, Autoplay ]}
         slidesPerView={1}
-        pagination={{ clickable: true }}
         autoplay={{
             delay: 5000,
             disableOnInteraction: false,
@@ -37,33 +36,25 @@ const Slider = () => {
         speed={1000}
         loop={true}
         navigation={true}
+        className='h-[45vh]'
         >
             {
-                dishes.map((item, index) => {
+                testimonials.map((item, index) => {
                     return (
-                        <SwiperSlide key={index} className='ring-1 h-[800px]'>
-                            <div className='flex flex-col justify-center items-center'>
-                                <div className='swiper-slide-content'>
-                                    <div className=''>
-                                        <Image src={item.image} alt={item.title} width={200} height={200} />
-                                    </div> 
+                        <SwiperSlide key={index} className=''>
+                            <div className='flex flex-col justify-center items-center mb-[2rem] text-center'>
+                                <div className='mb-[2rem]'>
+                                    <p className='font-medium font-montserrat max-w-[30rem] text-xl leading-[50px]'>&ldquo;{item.content}&ldquo;</p>
                                 </div>
-                                <h1 className='text-coral-red text-4xl'>Hello Pizzeria</h1>
-                                <h1 className='text-coral-red text-4xl'>Hello Pizzeria</h1>
-                                <h1 className='text-coral-red text-4xl'>Hello Pizzeria</h1>
-                                <h1 className='text-coral-red text-4xl'>Hello Pizzeria</h1>
-                                <h1 className='text-coral-red text-4xl mb-[2rem]'>Hello Pizzeria</h1>
+                                <div>
+                                    <h5 className='mb-[1.5rem] font-bold font-montserrat'>{item.name.split(" ")[0]} <span className='text-coral-red'>{item.name.split(" ")[1]}</span></h5>
+                                    <h6 className='font-montserrat font-small'>{item.position}</h6>
+                                </div>
                             </div>
                         </SwiperSlide>
                     )
                 })
             }
-
-            <div className="slider-controller">
-                <div className="slider-arrow">
-                    <FaArrowRight />
-                </div>
-            </div>
         </Swiper>
     </div>
   )
