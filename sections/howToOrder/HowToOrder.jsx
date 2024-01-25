@@ -1,6 +1,8 @@
+'use client'
 import { dishes } from '@/constants'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion';
 
 const HowToOrder = () => {
   return (
@@ -17,9 +19,14 @@ const HowToOrder = () => {
                             <h1 className='text-coral-red text-4xl font-bold'>0{index + 1}</h1>
                         </div>
                         <div className='padding-x py-12 flex flex-col items-center space-y-4 bg-pale-blue rounded-xl shadow-2xl'>
-                            <div className='relative h-[150px] xl:h-[100px] w-[150px] xl:w-[100px]'>
+                            <motion.div
+                                className='relative h-[150px] xl:h-[100px] w-[150px] xl:w-[100px]'
+                                transition={{ ease: "easeOut", duration: 2 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                            >
                                 <Image src={dish.image} alt={dish.name} className='object-contain' fill />
-                            </div>
+                            </motion.div>
                             <h4 className='font-bold font-palanquin'>{dish.name}</h4>
                         </div>
                     </div>
